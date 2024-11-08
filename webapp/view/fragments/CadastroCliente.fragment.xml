@@ -7,13 +7,13 @@
         <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
             <form:content>
                 <Label text="{i18n>colunaNome}" />
-				<Input value="{/dataForm/nome}" required="true" />
+				<Input id="inputNome" required="true" />
 
                 <Label text="{i18n>colunaDtNasc}" />
-                <DatePicker value="{/dataForm/dtNasc}" required="true" />
+                <DatePicker id="inputDt" required="true" />
 
                 <Label text="{i18n>colunaSexo}" />
-                <Select id="country" selectedKey="{/dataForm/sexo}" required="true">
+                <Select id="inputSexo" selectedKey="{/dataForm/sexo}" required="true">
 					<items>
 						<c:Item text="{i18n>GeneroFeminino}" key="Feminino"/>
 						<c:Item text="{i18n>GeneroMasculino}" key="Masculino"/>
@@ -22,7 +22,7 @@
 				</Select>
 
                 <Label text="{i18n>colunaAltura}" />
-                <DatePicker value="{/dataForm/altura}" required="true" />
+                <Input id="inputAltura" required="true" />
             </form:content>
         </form:SimpleForm>
         

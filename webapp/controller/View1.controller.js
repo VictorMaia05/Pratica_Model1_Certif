@@ -36,11 +36,32 @@ function (Controller, JSONModel, Fragment) {
         },
 
         onSubmitCadastro: function(oEvent) {
+            let sNome = this.getView().byId("inputNome").getValue();
 
+            let sDtNasc = this.getView().byId("inputDt").getValue();
+
+            let sSexo = this.getView().byId("inputSexo").getSelectedKey();
+
+            let sAltura = this.getView().byId("inputAltura").getValue();
+
+            let oAddDialog = {
+                "Nome": sNome,
+                "Idade": sDtNasc,
+                "Sexo": sSexo,
+                "Altura": sAltura
+            }
+
+            let oModel = this.getView().getModel().getData().dataTable;
+
+            oModel.push(oAddDialog);
+
+            this.getView().byId("customerTable").getBinding("items").refresh();
+
+            oEvent.getSource().getParent().destroy();
         },
 
         onCloseCadastro: function(oEvent) {
-
+            oEvent.getSource().getParent().destroy();
         }
     });
 });
