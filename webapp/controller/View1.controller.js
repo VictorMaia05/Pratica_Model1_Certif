@@ -49,7 +49,7 @@ function (Controller, JSONModel, Fragment, Formatter) {
             // Se não seleciono nenhum, ele não consegue entender o FEMININO.
             // Ao colocar o código abaixo não sei pq ele carrega no MODEL. \\
 
-            // let sSexo = this.getView().byId("selectedSexo").getSelectedKey(); \\
+            let sSexo = this.getView().byId("selectedSexo").getSelectedKey(); 
 
             oModelTable.push(oModelForm);
 
