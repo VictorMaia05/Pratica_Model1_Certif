@@ -7,22 +7,32 @@
         <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
             <form:content>
                 <Label text="{i18n>colunaNome}" />
-				<Input id="inputNome" required="true" />
+				<Input id="inputNome" required="true" value="{nome}" />
 
                 <Label text="{i18n>colunaDtNasc}" />
-                <DatePicker id="inputDt" required="true" />
+                <DatePicker id="inputDt" required="true" value="{path: 'dtNasc', type: 'sap.ui.model.type.Date'}" />
 
                 <Label text="{i18n>colunaSexo}" />
-                <Select id="inputSexo" selectedKey="{/dataForm/sexo}" required="true">
+                <SegmentedButton id="selectedSexo" selectedKey="{sexo}" >
 					<items>
-						<c:Item text="{i18n>GeneroFeminino}" key="Feminino"/>
-						<c:Item text="{i18n>GeneroMasculino}" key="Masculino"/>
-						<c:Item text="{i18n>GeneroOutros}" key="Outros"/>
+						<SegmentedButtonItem text="{i18n>GeneroFeminino}" key="{i18n>GeneroFeminino}"/>
+						<SegmentedButtonItem text="{i18n>GeneroMasculino}" key="{i18n>GeneroMasculino}" />
+						<SegmentedButtonItem text="{i18n>GeneroOutros}" key="{i18n>GeneroOutros}" />
 					</items>
-				</Select>
+				</SegmentedButton>
 
                 <Label text="{i18n>colunaAltura}" />
-                <Input id="inputAltura" required="true" />
+                <Input id="inputAltura" required="true"
+                                        value="{path: 'altura',
+                                                type: 'sap.ui.model.type.Float',
+                                                formatOptions: { 
+                                                    maxFractionDigits : 2,
+                                                    minFractionDigits: 2,
+                                                    groupingSeparator: '.',
+                                                    decimalSeparator: ',',
+                                                    groupingEnabled: true
+                                                }
+                                            }"/>
             </form:content>
         </form:SimpleForm>
         

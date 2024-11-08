@@ -45,14 +45,23 @@
             <items>
 			    <ColumnListItem vAlign="Middle">
 				    <cells>
-                        <ObjectIdentifier title="{Nome}"
-                                          text="{Nome}"/>
+                        <ObjectIdentifier text="{nome}"/>
 
-					    <Text text="{Idade}" />
+					    <Text text="{parts:[{path:'dtNasc'}], formatter:'.Formatter.idade'}" />
+                        <ObjectStatus icon="{parts:[{path:'sexo'}], formatter:'.Formatter.iconSexo'}"
+                                      text="{sexo}"
+                                      state="{parts:[{path:'sexo'}], formatter:'.Formatter.stateSexo'}" />
 
-					    <Text text="{Sexo}" />
-
-                        <Text text="{Altura}" />
+                        <Text text="{path: 'altura',
+                                     type: 'sap.ui.model.type.Float',
+                                     formatOptions: { 
+                                                    maxFractionDigits : 2,
+                                                    minFractionDigits: 2,
+                                                    groupingSeparator: '.',
+                                                    decimalSeparator: ',',
+                                                    groupingEnabled: true
+                                                }
+                                    }" />
 
 				    </cells>
 			    </ColumnListItem>
