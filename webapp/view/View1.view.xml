@@ -1,0 +1,64 @@
+<mvc:View controllerName="mentoria.fiori.ka.model1.vsm.zkauimodel1vsm.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" showHeader="false">
+
+        <Table id="customerTable"
+               inset="false"
+               noDataText="{i18n>semDadosTabela}"
+               items="{
+                   path: '/dataTable'
+               }">
+
+            <headerToolbar>
+                <OverflowToolbar>
+				    <content>
+					    <Title text="{i18n>tituloCabecalho}" level="H2"/>
+					    <ToolbarSpacer />
+					    <Button text="{i18n>botaoCadastro}"
+                                icon="sap-icon://add-employee"
+                                type="Emphasized"
+                                press="onClickNewCustomer"/>
+				    </content>
+			    </OverflowToolbar>
+		    </headerToolbar>
+
+            <columns>
+                <Column width="12em"
+                        hAlign="Center">
+                    <Text text="{i18n>colunaNome}" />
+                </Column>
+                <Column width="12em"
+                        hAlign="Center">
+                    <Text text="{i18n>colunaIdade}" />
+                </Column>
+                <Column width="12em"
+                        hAlign="Center">
+                    <Text text="{i18n>colunaSexo}" />
+                </Column>
+                <Column width="12em"
+                        hAlign="Center">
+                    <Text text="{i18n>colunaAltura}" />
+                </Column>
+		    </columns>
+
+            <items>
+			    <ColumnListItem vAlign="Middle">
+				    <cells>
+                        <ObjectIdentifier title="{Nome}"
+                                          text="{Nome}"/>
+
+					    <Text text="{Idade}" />
+
+					    <Text text="{Sexo}" />
+
+                        <Text text="{Altura}" />
+
+				    </cells>
+			    </ColumnListItem>
+		    </items>
+
+        </Table>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,38 @@
+<c:FragmentDefinition xmlns="sap.m"
+                      xmlns:c="sap.ui.core"
+                      xmlns:form="sap.ui.layout.form">
+
+    <Dialog id="dialogCadastro"
+            title="{i18n>tituloDialogCadastro}">
+        <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+            <form:content>
+                <Label text="{i18n>colunaNome}" />
+				<Input value="{/dataForm/nome}" required="true" />
+
+                <Label text="{i18n>colunaDtNasc}" />
+                <DatePicker value="{/dataForm/dtNasc}" required="true" />
+
+                <Label text="{i18n>colunaSexo}" />
+                <Select id="country" selectedKey="{/dataForm/sexo}" required="true">
+					<items>
+						<c:Item text="{i18n>GeneroFeminino}" key="Feminino"/>
+						<c:Item text="{i18n>GeneroMasculino}" key="Masculino"/>
+						<c:Item text="{i18n>GeneroOutros}" key="Outros"/>
+					</items>
+				</Select>
+
+                <Label text="{i18n>colunaAltura}" />
+                <DatePicker value="{/dataForm/altura}" required="true" />
+            </form:content>
+        </form:SimpleForm>
+        
+        <beginButton>
+            <Button text="{i18n>botaoSalvarCadastro}" icon="sap-icon://accept" type="Accept" press="onSubmitCadastro"/>
+        </beginButton>
+
+        <endButton>
+            <Button text="{i18n>botaoFecharCadastro}" icon="sap-icon://decline" type="Reject" press="onCloseCadastro"/>
+        </endButton>
+    </Dialog>
+
+</c:FragmentDefinition>
